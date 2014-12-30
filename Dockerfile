@@ -1,11 +1,9 @@
 FROM resin/rpi-raspbian
 
-RUN apt-get update -y
-RUN apt-get install ddclient -y
+RUN apt-get -y update
+RUN apt-get -y install ddclient
 
-COPY ddclient.conf /etc/ddclient.conf
 COPY run.sh /run.sh
-
 RUN chmod a+x run.sh
 
 CMD ["/run.sh"]
