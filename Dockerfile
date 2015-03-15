@@ -1,4 +1,7 @@
 FROM resin/rpi-raspbian
+MAINTAINER Nuno Sousa <nunofgs@gmail.com>
+
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -y update
 RUN apt-get -y install ddclient
