@@ -1,14 +1,14 @@
-# DynDNS update with ddclient on the RaspberryPi
+# DDclient for Raspberry Pi 2
 
-This docker image is meant to update your custom DynDNS provider with the current ip address of your RaspberryPi. For usage you have to set the following environmental variables in your docker container during startup.
+This is a Dockerfile to set up [DDclient](http://sourceforge.net/p/ddclient/wiki/Home/).
 
-- DD_SERVER=server.dyndns-service.com/update
-- DD_LOGIN=login-name
-- DD_PASSWORD='secret'
-- DD_HOSTS=host.to.update,another-host.to.update
+# Usage
 
-I suppose to store this in a seperate file and start the container regarding this file.
-
-`docker run -d --env-file=env.list cbeulke/rpi-ddclient`
-
-See the example env.list contained in this repo.
+```shell
+$ docker run \
+  -e "DD_SERVER=www.cloudflare.com"
+  -e "DD_LOGIN=foo@bar.com"
+  -e "DD_PASSWORD=fdsfjkdshkh1jk3h2jkdhwe787iuh"
+  -e "DD_HOSTS=myhost.com,another.host.com"
+  nunofgs/rpi-ddclient
+```
